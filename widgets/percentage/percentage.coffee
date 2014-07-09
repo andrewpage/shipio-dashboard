@@ -1,0 +1,16 @@
+class Dashing.Percentage extends Dashing.Widget
+  @accessor 'current', Dashing.AnimatedValue
+
+  onData: (data) ->
+    if data.status
+      # clear existing "status-*" classes
+      $(@get('node')).attr 'class', (i,c) ->
+        c.replace /\bstatus-\S+/g, ''
+      # add new class
+      $(@get('node')).addClass "status-#{data.status}"
+    if data.current >= 50.0
+      $(@node).removeClass("failing")
+      $(@node).addClass("passing")
+    else
+      $(@node).removeClass("passing")
+      $(@node).addClass("failing")
