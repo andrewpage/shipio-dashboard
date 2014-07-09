@@ -1,1 +1,5 @@
-Check out http://shopify.github.com/dashing for more information.
+# Ship.IO Dashboard
+
+Continuous integration dashboard for Ship.IO.
+
+Made using the Dashing framework (by Shopify).
